@@ -11,16 +11,17 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 const useStyles = makeStyles({
   root: {
     backgroundColor: "white",
-    height: 300,
+    height: 400,
     width: "100%",
+    display:"block",
   
 
   },
   card:{
     paddingTop:20,
-    maxWidth:225,
+    maxWidth:200,
     height :100,
-    backgroundColor:"gray"
+    backgroundColor:"black",
   }
 
   
@@ -30,19 +31,13 @@ const Content = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-    <Card  className={classes.card}>
-    <CardActionArea>
-    <CardMedia
-          component="img"
-      
-          height="140"
-          
-          image ="https://github.com/StreamCo/react-coding-challenge/blob/master/screens/1-home.jpg" 
+    <br/>
+    <div className={classes.card}/>
+    <br/>
+    <div className={classes.card}/>
 
-          />
-          </CardActionArea>
     
-    </Card>
+  
     </div>
   );
 };

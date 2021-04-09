@@ -1,0 +1,21 @@
+import React from "react";
+import "./style.css";
+import ButtonAppBar from "./ButtonAppBar.js";
+import AppBar from "@material-ui/core/AppBar";
+import Title from "./TitleBar";
+import Footer from "./Footer";
+import Content from "./Content";
+
+
+function Home() {
+  return (
+    <div>
+      <ButtonAppBar />
+      <AppBar />
+      <Title />
+      <Content/>
+      <Footer/>
+    </div>
+  );
+}
+export default Home;

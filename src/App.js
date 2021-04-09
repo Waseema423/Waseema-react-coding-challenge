@@ -1,20 +1,28 @@
-import React from "react";
-import "./style.css";
-import ButtonAppBar from "./ButtonAppBar.js";
-import AppBar from "@material-ui/core/AppBar";
-import Title from "./TitleBar";
-import Footer from "./Footer";
-import Content from "./Content"
+ import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from "./Home";
+import Movies from "./Movies";
+import Series from "./Series";
+
 
 
 export default function App() {
   return (
-    <div>
-      <ButtonAppBar />
-      <AppBar />
-      <Title />
-      <Content/>
-      <Footer/>
-    </div>
+    <Router>
+      <div>
+        
+      <Switch>
+<Route exact path="/" component={Home}/>
+<Route exact path="/Series" component={Series}/>
+
+<Route exact path="/Movies" component={Movies}/>
+</Switch>
+      </div>
+    </Router>
   );
 }

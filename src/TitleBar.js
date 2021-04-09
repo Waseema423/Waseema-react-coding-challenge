@@ -15,12 +15,12 @@ const useStyles = makeStyles({
   }
 });
 
-const Title = () => {
+const Title = ({props}) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Typography variant="h5" className={classes.bar}>
-        Popular Titles
+        Popular {props.name}
       </Typography>
     </div>
   );
