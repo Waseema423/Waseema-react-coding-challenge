@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   bar: {
     marginLeft: 200,
     color: "white",
-    padding: 10
+    padding: 10,
   }
 });
 
