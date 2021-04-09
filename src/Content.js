@@ -14,15 +14,13 @@ const useStyles = makeStyles({
     height: 400,
     width: "100%",
     display:"block",
-  
-
   },
   card:{
     paddingTop:20,
     maxWidth:200,
     height :100,
     backgroundColor:"black",
-  }
+  },
 
   
 });
