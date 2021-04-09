@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Title = ({props}) => {
+const Title = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>

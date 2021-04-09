@@ -12,7 +12,7 @@ function Series() {
     <div>
       <ButtonAppBar />
       <AppBar />
-      <Title />
+      <Title name={"Series"} />
       <Content/>
       <Footer/>
     </div>

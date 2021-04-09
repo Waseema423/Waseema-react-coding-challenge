@@ -12,7 +12,7 @@ function Movies() {
     <div>
       <ButtonAppBar />
       <AppBar />
-      <Title />
+      <Title name={"Movies"} />
       <Content/>
       <Footer/>
     </div>

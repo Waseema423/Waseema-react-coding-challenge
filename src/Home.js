@@ -12,7 +12,7 @@ function Home() {
     <div>
       <ButtonAppBar />
       <AppBar />
-      <Title />
+      <Title name={"Titles"} />
       <Content/>
       <Footer/>
     </div>
