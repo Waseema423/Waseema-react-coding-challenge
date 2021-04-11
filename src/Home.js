@@ -8,6 +8,8 @@ import Content from "./Content";
 import Series from "./Series";
 import Movies from "./Movies";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
+
 
 import {
   BrowserRouter as Router,
@@ -17,18 +19,22 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+const Item = () => {
+  const { name } = useParams();
 
- const useStyles = makeStyles({
-  root: {
-    backgroundColor: "white",
-    height: 300,
-    width: "100%",
-    display:"block",
-  },
- });
+  return (
+    <div>
+      <h3>{name}</h3>
+    </div>
+  );
+}
+
+
 function Home() {
-  let match = useRouteMatch();
-  const classes = useStyles();
+  
+  
+   let { path, url } = useRouteMatch();
+
 
  
   return (
@@ -36,29 +42,22 @@ function Home() {
     <ButtonAppBar />
       <AppBar />
       <Title name={"Titles"} />
-      
-<div className ={classes.root}>
-      
-      <img src="https://github.com/StreamCo/react-coding-challenge/raw/master/assets/placeholder.png"/>
-          <Link to={`${match.url}/Series`}>Series</Link>
+    
+       <img src="https://github.com/StreamCo/react-coding-challenge/raw/master/assets/placeholder.png"/>
+          <Link to={`${url}/Series`}>Series</Link>
         
-          <Link to={`${match.url}/Movies`}>
+          <Link to={`${url}/Movies`}>
       
       <img src="https://github.com/StreamCo/react-coding-challenge/raw/master/assets/placeholder.png"/>
 
           
             Movies
           </Link>
-    <Router>
-      <Switch>
-               <Route  path="/Series" component={Series}/>
-               <Route path="/Movies" component={Movies}/>
-            </Switch>
-            </Router>
-
-</div>
-    
-      <Footer/>
+          
+     <Route path={`${path}/:name`}>
+        <Item />
+      </Route>
+  
     </div>
   );
 }

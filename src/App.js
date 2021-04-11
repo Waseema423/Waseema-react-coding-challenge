@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,21 +10,32 @@ import {
 import Home from "./Home";
 import Movies from "./Movies";
 import Series from "./Series";
+import axios from "axios";
+
 
 export default function App() {
+
+   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json").then(res => {
+      console.log(res);
+      setData(res.data);
+    });
+  }, []);
   return (
     <Router>
       <div>
         <ul>
         
           <li>
-            <Link to="/Home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
         </ul>
 
         <Switch>
         
-          <Route  path="/Home">
+          <Route  path="/">
             <Home />
           </Route>
           
