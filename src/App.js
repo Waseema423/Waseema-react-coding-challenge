@@ -1,28 +1,38 @@
- import React from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useRouteMatch,
+  useParams
 } from "react-router-dom";
 import Home from "./Home";
 import Movies from "./Movies";
 import Series from "./Series";
 
-
-
 export default function App() {
   return (
     <Router>
       <div>
+        <ul>
         
-      <Switch>
-<Route exact path="/" component={Home}/>
-<Route exact path="/Series" component={Series}/>
+          <li>
+            <Link to="/Home">Home</Link>
+          </li>
+        </ul>
 
-<Route exact path="/Movies" component={Movies}/>
-</Switch>
+        <Switch>
+        
+          <Route  path="/Home">
+            <Home />
+          </Route>
+          
+        </Switch>
       </div>
     </Router>
   );
 }
+
+
+
